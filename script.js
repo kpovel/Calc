@@ -1,5 +1,5 @@
-function calc(a, b, operator) {
-    const isNotValid = (typeof a !== 'number') || (typeof b !== 'number') || (operator === undefined) || isNaN(a) || isNaN(b) || ((operator === 'div' || operator === 'rem') && b === 0)
+function calc(operator, a, b) {
+    const isNotValid = (operator === undefined) || (typeof a !== 'number') || (typeof b !== 'number') || isNaN(a) || isNaN(b) || ((operator === 'div' || operator === 'rem') && b === 0)
     if (isNotValid) {
         return 'Error'
     }
@@ -21,4 +21,4 @@ function calc(a, b, operator) {
     }
 }
 
-console.log(calc(2, 0, 'rem'))
+console.log(calc('rem', 2, 0))
